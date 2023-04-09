@@ -24,6 +24,7 @@
     <ProjectGuid>{f54b0498-3eeb-4552-a7a2-f1fd3e6be47c}</ProjectGuid>
     <RootNamespace>opengllearn</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>starlight</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -146,7 +147,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
+    <ClCompile Include="Engine\Renderer\Loader.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Engine\Models\RawModel.cpp" />
+    <ClCompile Include="Engine\Renderer\Renderer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\Models\RawModel.h" />
+    <ClInclude Include="Engine\Renderer\Loader.h" />
+    <ClInclude Include="Engine\Renderer\Renderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
