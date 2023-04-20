@@ -6,7 +6,7 @@ namespace Starlight {
 	Loader::Loader() {
 
 	}
-	RawModel Loader::loadToVAO(int length,float *positions) {
+	RawModel Loader::loadToVAO(int length,const float *positions) {
 		unsigned int vaoID = createVAO();
 		std::cout << length;
 		storeDataInAttributeList(0,length, positions);
@@ -21,7 +21,7 @@ namespace Starlight {
 		glBindVertexArray(vaoID);
 		return vaoID;
 	}
-	void Loader::storeDataInAttributeList(int attributeNumber,int length, float *data) {
+	void Loader::storeDataInAttributeList(int attributeNumber,int length,const float *data) {
 		unsigned int vboID;
 		glGenBuffers(1, &vboID);
 		vbos.push_back(vboID);

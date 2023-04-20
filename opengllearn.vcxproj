@@ -148,6 +148,7 @@
   <ItemGroup>
     <ClCompile Include="glad.c" />
     <ClCompile Include="Engine\Renderer\Loader.cpp" />
+    <ClCompile Include="Engine\Input\InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Engine\Models\RawModel.cpp" />
     <ClCompile Include="Engine\Renderer\Renderer.cpp" />
@@ -156,6 +157,8 @@
     <ClInclude Include="Engine\Models\RawModel.h" />
     <ClInclude Include="Engine\Renderer\Loader.h" />
     <ClInclude Include="Engine\Renderer\Renderer.h" />
+    <ClInclude Include="Starlight.h" />
+    <ClInclude Include="Engine\Input\InputManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

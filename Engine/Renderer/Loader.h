@@ -10,10 +10,10 @@ namespace Starlight {
 		std::vector<unsigned int> vbos;
 		Loader();
 		~Loader();
-		RawModel loadToVAO(int length,float *positions);
+		RawModel loadToVAO(int length,const float *positions);
 	private:
 		unsigned int createVAO();
-		void storeDataInAttributeList(int attributeNumber,int length, float *data);
+		void storeDataInAttributeList(int attributeNumber,int length,const float *data);
 		void unbindVAO();
 	
 	};

@@ -1,11 +1,9 @@
 #include<glad/glad.h>
 #include<GLFW/glfw3.h>
 #include<iostream>
-#include "Engine/Renderer/Loader.h"
-#include "Engine/Renderer/Renderer.h"
-#include "Engine/Models/RawModel.h"
+#include "Starlight.h"
 
-float vertices[] = {
+const float vertices[] = {
     -0.5f, 0.5f, 0.f,
     -0.5f, -0.5f, 0.f,
     0.5f, -0.5f, 0.f,
@@ -47,12 +45,12 @@ int main()
     Starlight::RawModel model = loader.loadToVAO(length,vertices);
     while (!glfwWindowShouldClose(window))
     {
-        renderer.init();
-        processInput(window);
-        
-        renderer.render(model);
-        glfwPollEvents();
-        glfwSwapBuffers(window);
+        //input reader
+        Starlight::InputManager::processInput(window);
+        renderer.init();//init renderer
+        renderer.render(model);//render
+        glfwPollEvents();//looking for events like inputs, resize n stuff
+        glfwSwapBuffers(window);//swap buffers on screen
         
     }
 
