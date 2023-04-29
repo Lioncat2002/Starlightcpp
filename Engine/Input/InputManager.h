@@ -4,6 +4,6 @@
 namespace Starlight{
 	class InputManager{
 	public:
-		static void processInput(GLFWwindow* window);
+		static void Update(GLFWwindow* window);
 	};
 }

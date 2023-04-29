@@ -13,11 +13,7 @@ const float vertices[] = {
 };
 
 
-void processInput(GLFWwindow *window) {
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-        glfwSetWindowShouldClose(window, true);
-    }
-}
+
 
 int main()
 {
@@ -26,7 +22,7 @@ int main()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(800, 600, "Some Game", NULL, NULL);
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
@@ -46,7 +42,7 @@ int main()
     while (!glfwWindowShouldClose(window))
     {
         //input reader
-        Starlight::InputManager::processInput(window);
+        Starlight::InputManager::Update(window);
         renderer.init();//init renderer
         renderer.render(model);//render
         glfwPollEvents();//looking for events like inputs, resize n stuff
