@@ -1,9 +1,5 @@
-﻿  glad.c
-  Loader.cpp
-  InputManager.cpp
+﻿  Entity.cpp
   main.cpp
-  RawModel.cpp
-  Renderer.cpp
   Generating Code...
 reactphysics3d.lib(PhysicsCommon.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in Loader.obj
 reactphysics3d.lib(PhysicsCommon.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in Loader.obj
