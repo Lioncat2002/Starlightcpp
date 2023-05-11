@@ -2,7 +2,7 @@
 #include<GLFW/glfw3.h>
 #include<iostream>
 #include "Starlight.h"
-
+#include <reactphysics3d/reactphysics3d.h>
 const float vertices[] = {
     -0.5f, 0.5f, 0.f,
     -0.5f, -0.5f, 0.f,
@@ -35,6 +35,16 @@ int main()
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
+
+    /**
+    * A global physics world needed for interaction 
+    */
+
+    rp3d::PhysicsCommon physicsCommon;
+
+    // Create a physics world 
+    rp3d::PhysicsWorld* world = physicsCommon.createPhysicsWorld();
+
     Starlight::Loader loader;
     Starlight::Renderer renderer;
     int length = sizeof(vertices) / sizeof(vertices[0]);

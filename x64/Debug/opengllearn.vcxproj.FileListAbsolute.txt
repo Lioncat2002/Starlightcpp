@@ -1,2 +1,0 @@
-E:\cpp\opengllearn\opengllearn\x64\Debug\opengllearn.exe
-E:\cpp\Starlightcpp-rewrite\x64\Debug\starlight.exe
