@@ -8,7 +8,7 @@ namespace Starlight {
 	void Renderer::render(RawModel model) {
 		glBindVertexArray(model.getVaoId());
 		glEnableVertexAttribArray(0);
-		glDrawArrays(GL_TRIANGLES, 0, model.getVertexCount());
+		glDrawElements(GL_TRIANGLES,model.getVertexCount(),GL_UNSIGNED_INT,0);
 		glDisableVertexAttribArray(0);
 		glBindVertexArray(0);
 	}

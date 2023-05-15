@@ -4,14 +4,15 @@
 #include "Starlight.h"
 #include <reactphysics3d/reactphysics3d.h>
 const float vertices[] = {
-    -0.5f, 0.5f, 0.f,
-    -0.5f, -0.5f, 0.f,
-    0.5f, -0.5f, 0.f,
-    0.5f, -0.5f, 0.f,
-    0.5f, 0.5f, 0.f,
-    -0.5f, 0.5f, 0.f
+                -0.5f, 0.5f, 0.f,//v0
+                -0.5f, -0.5f, 0.f,//v1
+                0.5f, -0.5f, 0.f,//v2
+                0.5f, 0.5f, 0.f,//v3
 };
-
+const int indices[] = {
+                0,1,3,//top left triangle (v0, v1, v3)
+                3,1,2//bottom right triangle (v3, v1, v2)
+};
 
 
 
@@ -48,7 +49,8 @@ int main()
     Starlight::Loader loader;
     Starlight::Renderer renderer;
     int length = sizeof(vertices) / sizeof(vertices[0]);
-    Starlight::RawModel model = loader.loadToVAO(length,vertices);
+    int indices_length = sizeof(indices) / sizeof(indices[0]);
+    Starlight::RawModel model = loader.loadToVAO(length,vertices,indices_length,indices);
     while (!glfwWindowShouldClose(window))
     {
         //input reader
