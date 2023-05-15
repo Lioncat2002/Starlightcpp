@@ -36,6 +36,9 @@
     <ClCompile Include="Engine\Entity\Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\Shaders\ShaderProgram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Models\RawModel.h">
@@ -56,5 +59,12 @@
     <ClInclude Include="Engine\Entity\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\Shaders\ShaderProgram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Engine\Shaders\vertex.shader" />
+    <None Include="Engine\Shaders\fragment.shader" />
   </ItemGroup>
 </Project>

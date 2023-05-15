@@ -1,5 +1,6 @@
 #pragma once
 #include "../Models/RawModel.h"
+#include "glad/glad.h"
 #include <vector>
 namespace Starlight {
 	class Loader

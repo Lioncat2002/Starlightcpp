@@ -1,5 +1,4 @@
 #include "Loader.h"
-#include "glad/glad.h"
 #include <iostream>
 
 namespace Starlight {
