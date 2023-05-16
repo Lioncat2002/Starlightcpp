@@ -25,7 +25,7 @@ namespace Starlight {
 		glGenBuffers(1, &vboID);
 		vbos.push_back(vboID);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vboID);
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, length * sizeof(float), indices, GL_STATIC_DRAW);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, length * sizeof(int), indices, GL_STATIC_DRAW);
 	}
 	void Loader::storeDataInAttributeList(int attributeNumber,int length,const float *data) {
 		unsigned int vboID;

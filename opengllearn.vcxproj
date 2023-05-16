@@ -156,6 +156,7 @@
     <ClCompile Include="Engine\Models\RawModel.cpp" />
     <ClCompile Include="Engine\Renderer\Renderer.cpp" />
     <ClCompile Include="Engine\Shaders\ShaderProgram.cpp" />
+    <ClCompile Include="Engine\Shaders\StaticShader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Models\RawModel.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="Engine\Shaders\ShaderProgram.h" />
     <ClInclude Include="Starlight.h" />
     <ClInclude Include="Engine\Input\InputManager.h" />
+    <ClInclude Include="Engine\Shaders\StaticShader.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Engine\Shaders\fragment.shader" />

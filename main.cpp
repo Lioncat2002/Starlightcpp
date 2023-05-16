@@ -48,6 +48,9 @@ int main()
 
     Starlight::Loader loader;
     Starlight::Renderer renderer;
+    Starlight::StaticShader staticShader=Starlight::StaticShader();
+
+
     int length = sizeof(vertices) / sizeof(vertices[0]);
     int indices_length = sizeof(indices) / sizeof(indices[0]);
     Starlight::RawModel model = loader.loadToVAO(length,vertices,indices_length,indices);
@@ -55,14 +58,22 @@ int main()
     {
         //input reader
         Starlight::InputManager::Update(window);
+        
         renderer.init();//init renderer
+        staticShader.init();
+        
         renderer.render(model);//render
+        
+        staticShader.dispose();
+        
         glfwPollEvents();//looking for events like inputs, resize n stuff
         glfwSwapBuffers(window);//swap buffers on screen
         
     }
 
     glfwTerminate();
+    
     loader.~Loader();
+    staticShader.clean();
     return 0;
 }
