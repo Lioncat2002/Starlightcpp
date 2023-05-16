@@ -3,9 +3,7 @@
 
 
 namespace Starlight {
-	ShaderProgram::ShaderProgram()
-	{
-	}
+	
 	ShaderProgram::ShaderProgram(std::string VERTEXFILE, std::string FRAGMENTFILE)
 	{
 		vertexShaderID = loadShader(VERTEXFILE, GL_VERTEX_SHADER);
@@ -13,6 +11,7 @@ namespace Starlight {
 		programID = glCreateProgram();
 		glAttachShader(programID, vertexShaderID);
 		glAttachShader(programID, fragmentShaderID);
+		bindAttributes();
 		glLinkProgram(programID);
 		glValidateProgram(programID);
 	}
@@ -24,6 +23,7 @@ namespace Starlight {
 
 	void ShaderProgram::dispose()
 	{
+		//std::cout << "bruh";
 		glUseProgram(0);
 	}
 

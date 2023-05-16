@@ -17,7 +17,6 @@ namespace Starlight {
 
 		static int loadShader(std::string filename, int type);
 	public:
-		ShaderProgram();
 		ShaderProgram(std::string VERTEXFILE, std::string FRAGMENTFILE);
 		void init();
 		void dispose();

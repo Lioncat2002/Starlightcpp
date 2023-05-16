@@ -4,9 +4,10 @@ namespace Starlight {
 	{
 		bindAttribute(0, "position");
 	}
-	StaticShader::StaticShader()
+	StaticShader::StaticShader(std::string VERTEX_FILE, std::string FRAGMENT_FILE)
+		:ShaderProgram(VERTEX_FILE, FRAGMENT_FILE)
 	{
-		ShaderProgram(VERTEX_FILE,FRAGMENT_FILE);
+		
 	}
 
 }

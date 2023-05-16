@@ -40,7 +40,8 @@ int main()
     /**
     * A global physics world needed for interaction 
     */
-
+    std::string VERTEX_FILE = "Engine//Shaders//vertex.shader";
+    std::string FRAGMENT_FILE = "Engine//Shaders//fragment.shader";
     rp3d::PhysicsCommon physicsCommon;
 
     // Create a physics world 
@@ -48,7 +49,7 @@ int main()
 
     Starlight::Loader loader;
     Starlight::Renderer renderer;
-    Starlight::StaticShader staticShader=Starlight::StaticShader();
+    Starlight::StaticShader staticShader(VERTEX_FILE,FRAGMENT_FILE);
 
 
     int length = sizeof(vertices) / sizeof(vertices[0]);
