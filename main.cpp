@@ -1,8 +1,5 @@
-#include<glad/glad.h>
-#include<GLFW/glfw3.h>
-#include<iostream>
 #include "Starlight.h"
-#include <reactphysics3d/reactphysics3d.h>
+
 const float vertices[] = {
                 -0.5f, 0.5f, 0.f,//v0
                 -0.5f, -0.5f, 0.f,//v1
@@ -14,13 +11,18 @@ const int indices[] = {
                 3,1,2//bottom right triangle (v3, v1, v2)
 };
 
+const float texCoords[] = {
+    0.0f, 0.0f,  // lower-left corner  
+    1.0f, 0.0f,  // lower-right corner
+    0.5f, 1.0f   // top-center corner
+};
 
 
 int main()
 {
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     GLFWwindow* window = glfwCreateWindow(800, 600, "Some Game", NULL, NULL);
@@ -42,10 +44,10 @@ int main()
     */
     std::string VERTEX_FILE = "Engine//Shaders//vertex.shader";
     std::string FRAGMENT_FILE = "Engine//Shaders//fragment.shader";
-    rp3d::PhysicsCommon physicsCommon;
+    //rp3d::PhysicsCommon physicsCommon;
 
     // Create a physics world 
-    rp3d::PhysicsWorld* world = physicsCommon.createPhysicsWorld();
+    //rp3d::PhysicsWorld* world = physicsCommon.createPhysicsWorld();
 
     Starlight::Loader loader;
     Starlight::Renderer renderer;
@@ -73,8 +75,5 @@ int main()
     }
 
     glfwTerminate();
-    
-    loader.~Loader();
-    staticShader.clean();
     return 0;
 }

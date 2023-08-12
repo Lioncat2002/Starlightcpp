@@ -4,8 +4,6 @@
 namespace Starlight {
 	class StaticShader :public ShaderProgram
 	{
-	private:
-		
 	protected:
 		void bindAttributes() override;
 		

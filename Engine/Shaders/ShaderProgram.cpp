@@ -27,7 +27,7 @@ namespace Starlight {
 		glUseProgram(0);
 	}
 
-	void ShaderProgram::clean()
+	ShaderProgram::~ShaderProgram()
 	{
 		dispose();
 		glDetachShader(programID, vertexShaderID);

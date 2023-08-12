@@ -1,15 +1,40 @@
 #include "Loader.h"
-#include <iostream>
-
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
 namespace Starlight {
 	Loader::Loader() {
 
 	}
-	RawModel Loader::loadToVAO(const int positions_length,const float *positions,const int indices_length,const int *indices) {
+	unsigned int Loader::loadTexture(const char* fileName) {
+		unsigned int textureID;
+		glGenTextures(1, &textureID);
+		glBindTexture(GL_TEXTURE_2D, textureID);
+		//set the texture wrapping/filtering options
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+		
+		//load and generate the texture
+		int width, height, nrChannels;
+		unsigned char* data = stbi_load(fileName, &width, &height, &nrChannels, 0);
+		if (data) {
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+			glGenerateMipmap(GL_TEXTURE_2D);
+		}
+		else {
+			std::cout << "Failed to load texture\n";
+		}
+		
+		textures.push_back(textureID);
+		stbi_image_free(data);
+		return textureID;
+	}
+	RawModel Loader::loadToVAO(const int positions_length,const float *positions,const int indices_length,const int *indices,const int tex_length,const float *texture) {
 		unsigned int vaoID = createVAO();
 		bindIndicesBuffer(indices_length,indices);
 		storeDataInAttributeList(0,positions_length, positions);
-
+		storeDataInAttributeList(1,tex_length,texture);
 		unbindVAO();
 		return RawModel(vaoID,indices_length);
 	}
@@ -44,6 +69,9 @@ namespace Starlight {
 		}
 		for (unsigned int vbo : vbos) {
 			glDeleteBuffers(1, &vbo);
+		}
+		for (unsigned int tex : textures) {
+			glDeleteTextures(1, &tex);
 		}
 	}
 }

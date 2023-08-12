@@ -68,6 +68,9 @@
     <ClInclude Include="Engine\Shaders\StaticShader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="dev\include\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Engine\Shaders\vertex.shader" />

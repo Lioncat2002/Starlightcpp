@@ -163,6 +163,7 @@
     <ClInclude Include="Engine\Renderer\Loader.h" />
     <ClInclude Include="Engine\Renderer\Renderer.h" />
     <ClInclude Include="Engine\Entity\Entity.h" />
+    <ClInclude Include="dev\include\stb_image.h" />
     <ClInclude Include="Engine\Shaders\ShaderProgram.h" />
     <ClInclude Include="Starlight.h" />
     <ClInclude Include="Engine\Input\InputManager.h" />
